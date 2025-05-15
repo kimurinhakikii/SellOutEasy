@@ -170,5 +170,5 @@ Este projeto foi desenvolvido para fins acadêmicos e demonstração de conceito
 [LinkedIn](https://www.linkedin.com/in/roger-alencar-it/)
 
 **Kevin Benevides** |
-[LinkedIn](*)
+[LinkedIn](https://www.linkedin.com/in/kevinbenevidesdasilva/)
 
