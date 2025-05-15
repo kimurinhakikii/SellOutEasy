@@ -56,7 +56,7 @@ O sistema permite:
 
 ````
 
-## 🛠️ Requisitos
+ 🛠️ Requisitos
 
 - JDK 17 ou superior
 - MySQL Server 8 ou superior
@@ -65,7 +65,7 @@ O sistema permite:
 
 ---
 
-## 🗃️ Configuração do Banco de Dados
+ 🗃️ Configuração do Banco de Dados
 
 ```sql
 CREATE DATABASE sellout_easytrack;
