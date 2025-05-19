@@ -9,7 +9,7 @@ import java.util.*;
 public class VendaDAO {
 
     public void inserirVenda(Venda venda) throws SQLException {
-        String sql = "INSERT INTO vendas (produto, quantidade, valor_unitario, data) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO vendas (produto, quantidade, valor_unitario, data_venda) VALUES (?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, venda.getProduto());
@@ -32,7 +32,7 @@ public class VendaDAO {
                         rs.getString("produto"),
                         rs.getInt("quantidade"),
                         rs.getDouble("valor_unitario"),
-                        rs.getDate("data")
+                        rs.getDate("data_venda")
                 );
                 lista.add(venda);
             }

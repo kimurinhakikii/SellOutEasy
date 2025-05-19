@@ -2,19 +2,21 @@
 
 Sistema de controle de vendas com interface moderna em Java, integração com MySQL e geração de relatórios gráficos interativos.
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Java](https://img.shields.io/badge/Java-11+-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![Swing](https://img.shields.io/badge/Swing-UI-green?style=for-the-badge)
 ![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 ![FlatLaf](https://img.shields.io/badge/FlatLaf-3.6-blue?style=for-the-badge)
-![JFreeChart](https://img.shields.io/badge/JFreeChart-1.5.5-purple?style=for-the-badge)
+![JFreeChart](https://img.shields.io/badge/JFreeChart-1.5.3-purple?style=for-the-badge)
+![Maven](https://img.shields.io/badge/Maven-Automated-red?style=for-the-badge)
 
 ---
 
 ## 📋 Descrição
 
-O **SellOut EasyTrack** é uma aplicação desktop corporativa desenvolvida em **Java Swing moderno com FlatLaf**, utilizando arquitetura **MVC + DAO**, integração real com banco de dados **MySQL** via JDBC, e geração de relatórios com gráficos profissionais usando **JFreeChart**.
+O **SellOut EasyTrack** é uma aplicação desktop corporativa desenvolvida em **Java Swing com FlatLaf**, utilizando arquitetura **MVC + DAO**, integração real com banco de dados **MySQL** via JDBC, e geração de relatórios com gráficos profissionais usando **JFreeChart**.
 
 O sistema permite:
+
 - Registro de vendas reais.
 - Visualização de relatórios e gráficos de desempenho.
 - Exportação de relatórios em **CSV**.
@@ -25,52 +27,62 @@ O sistema permite:
 ## 💻 Tecnologias Utilizadas
 
 | Tecnologia        | Descrição                                         |
-|--------------------|----------------------------------------------------|
-| Java SE 17+        | Linguagem principal do projeto                    |
-| Swing + FlatLaf    | Interface gráfica moderna e refinada              |
-| MySQL 8+           | Banco de dados relacional                         |
-| JDBC               | Conexão Java com MySQL                            |
-| JFreeChart         | Geração de gráficos dinâmicos e profissionais     |
+|-------------------|--------------------------------------------------|
+| Java 11+          | Linguagem principal do projeto                   |
+| Swing + FlatLaf   | Interface gráfica moderna e refinada                       |
+| MySQL 8+          | Banco de dados relacional                        |
+| JDBC              | Conexão Java com MySQL                         |
+| JFreeChart        | Geração de gráficos dinâmicos e profissionais |
+| Maven             | Gerenciamento automatizado de dependências      |
 
 ---
 
 ## 🎯 Funcionalidades
 
-- ✅ Registro de vendas  
-- ✅ Dashboard moderno com cards e gráficos integrados  
-- ✅ Geração de relatórios gráficos em tela  
+- ✅ Registro de vendas
+- ✅ Dashboard moderno com cards e gráficos integrados
+- ✅ Geração de relatórios gráficos em tela
 - ✅ Exportação de dados para **CSV**  
-- ✅ Conexão real com banco de dados **MySQL**  
-- ✅ Interface intuitiva estilo ERP moderno  
+- ✅ Conexão real com banco de dados MySQL
+- ✅ Interface moderna com FlatLaf  
 
 ---
 
-## 🗄️ Estrutura de Pastas
-📁 sellout\_easytrack
-├── 📦 controller
-├── 📦 dao
-├── 📦 model
-├── 📦 util
-├── 📦 view
-└── 📄 Main.java
+## 📁 Estrutura de Pastas
 
-````
-
- 🛠️ Requisitos
-
-- JDK 17 ou superior
-- MySQL Server 8 ou superior
-- IDE Java (IntelliJ, Eclipse, NetBeans, etc.)
-- Conexão ativa com o banco de dados
+```
+SellOutEasy/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   ├── controller/
+│       │   ├── dao/
+│       │   ├── model/
+│       │   ├── util/
+│       │   └── view/
+│       └── resources/
+├── pom.xml
+└── README.md
+```
 
 ---
 
- 🗃️ Configuração do Banco de Dados
+## 🛠️ Requisitos
+
+- Java JDK 11 ou superior  
+- MySQL ou MariaDB  
+- Maven instalado  
+
+---
+
+## 🗃️ Configuração do Banco de Dados
+
+### Script SQL
 
 ```sql
-CREATE DATABASE sellout_easytrack;
+CREATE DATABASE SellOutEasyTrack_SQL;
 
-USE sellout_easytrack;
+USE SellOutEasyTrack_SQL;
 
 CREATE TABLE vendas (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -79,20 +91,22 @@ CREATE TABLE vendas (
     valor_unitario DECIMAL(10,2) NOT NULL,
     data_venda DATE NOT NULL
 );
-````
+```
 
-### 💡 Configuração da conexão
+---
+
+### 💡 Configuração da Conexão
 
 No arquivo:
 
 ```
-util/ConexaoDB.java
+src/main/java/util/DBConnection.java
 ```
 
 Edite as credenciais:
 
 ```java
-private static final String URL = "jdbc:mysql://localhost:3306/sellout_easytrack";
+private static final String URL = "jdbc:mysql://localhost:3306/SellOutEasyTrack_SQL";
 private static final String USER = "seu_usuario";
 private static final String PASSWORD = "sua_senha";
 ```
@@ -103,72 +117,63 @@ private static final String PASSWORD = "sua_senha";
 
 1. Clone o repositório:
 
-   ```bash
-   git clone https://github.com/seuusuario/sellout_easytrack.git
-   ```
+```bash
+git clone https://github.com/kimurinhakikii/SellOutEasy.git
+cd SellOutEasy
+```
 
-2. Importe em sua IDE Java.
+2. Compile o projeto com Maven:
 
-3. Adicione as bibliotecas no `Classpath`:
+```bash
+mvn clean compile
+```
 
-    * `flatlaf-3.6.jar`
-    * `jfreechart-1.5.5.jar`
-    * `mysql-connector-j-9.3.jar`
+3. Execute a aplicação:
 
-4. Execute a classe:
-
-   ```bash
-   Main.java
-   ```
-
----
-
-## 📈 Relatórios e Exportações
-
-* **Gráfico em tela:** Exibe gráfico de barras com desempenho mensal.
-* **Exportação CSV:** Exporta vendas registradas para arquivo `.csv`.
+```bash
+mvn exec:java -Dexec.mainClass="Main"
+```
 
 ---
 
+## 📈 Relatórios e Gráficos
+
+- **Gráfico em tela**: Exibe gráfico de barras com desempenho mensal.
+- **Exportação CSV**: Exporta vendas registradas para arquivo ```.csv```
 
 ---
 
 ## 📚 Padrões de Projeto Utilizados
 
-* **DAO (Data Access Object)**
-* **Singleton (Conexão DB)**
-* **MVC (Model - View - Controller)**
-* **POO Completo (Encapsulamento, Herança, Polimorfismo, Coleções, Exceptions Personalizadas)**
+- **MVC** (Model-View-Controller)
+- **DAO** (Data Access Object)
+- **Singleton** (para conexão com o banco)
+- **POO completa** (encapsulamento, herança, polimorfismo, coleções, tratamento de exceções)
 
 ---
 
-## 📦 Bibliotecas
+## 📦 Bibliotecas (Gerenciadas via Maven)
 
 | Biblioteca        | Versão |
-| ----------------- | ------ |
-| FlatLaf           | 3.6    |
-| JFreeChart        | 1.5.5  |
-| MySQL Connector/J | 9.3    |
+|-------------------|--------|
+| FlatLaf           | 3.2    |
+| JFreeChart        | 1.5.3  |
+| MySQL Connector/J | 8.0.33 |
 
 ---
 
 ## 📑 Licença
 
-Este projeto foi desenvolvido para fins acadêmicos e demonstração de conceitos de **POO completa, arquitetura em camadas, integração com banco de dados real e UI moderna em Java**.
+Projeto desenvolvido para fins acadêmicos e demonstração de conceitos **POO completa e arquitetura em camadas** com foco em arquitetura Java robusta, integração com banco de dados, e interface amigável com recursos modernos de visualização.
 
 ---
 
 ## 🤝 Autores
 
-**Yasmin Kimura** |
-[LinkedIn](https://www.linkedin.com/in/yasmin-kimura-b374b72b7/)
-
-**André Flores** |
-[LinkedIn](https://www.linkedin.com/in/andréflores/)
-
-**Roger Alencar** |
-[LinkedIn](https://www.linkedin.com/in/roger-alencar-it/)
-
-**Kevin Benevides** |
-[LinkedIn](https://www.linkedin.com/in/kevinbenevidesdasilva/)
-
+| Nome             | LinkedIn |
+|------------------|----------|
+| Yasmin Kimura    | [LinkedIn](https://www.linkedin.com/in/yasmin-kimura-b374b72b7/) |
+| André Flores     | [LinkedIn](https://www.linkedin.com/in/andréflores/) |
+| Roger Alencar    | [LinkedIn](https://www.linkedin.com/in/roger-alencar-it/) |
+| **Kevin Benevides** | [LinkedIn](https://www.linkedin.com/in/kevinbenevidesdasilva/) |
+| Arthur Corrêa | [LinkedIn](https://www.linkedin.com/in/arthurceicorrea/) | 
